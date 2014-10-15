@@ -48,11 +48,12 @@ ADD wrapdocker /etc/my_init.d/wrapdocker
 RUN chmod +x /etc/my_init.d/wrapdocker
 
 # Setup Jenkins daemon
-ONBUILD RUN mkdir /etc/service/jenkins
+ONBUILD RUN mkdir -p /etc/service/jenkins
 ONBUILD ADD jenkins/run /etc/service/jenkins/run
 ONBUILD RUN chmod +x /etc/service/jenkins/run
 
 # Add jobs and plugins
+ONBUILD RUN mkdir -p /var/lib/jenkins
 ONBUILD ADD jobs /var/lib/jenkins/jobs
 ONBUILD ADD plugins /var/lib/jenkins/plugins
 
