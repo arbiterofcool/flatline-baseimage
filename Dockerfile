@@ -1,4 +1,4 @@
-FROM arbiterofcool/baseimage
+FROM phusion/baseimage:0.9.15
 MAINTAINER Sean Chatman <xpointsh@gmail.com>
 
 ######### Installing Dependencies #########
